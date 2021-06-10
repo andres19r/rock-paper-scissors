@@ -5,25 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
     <title>Rock Papper Scissors</title>
 </head>
 <body>
-    <h3 id="result">You win!</h3>
+    <h2 id="result">You win!</h2>
     <main>
-        <div>
-            <button class="selection">ROCK</button>
-            <button class="selection">PAPER</button>
-            <button class="selection">SCISSORS</button>
+        <div id="player-options">
+            <button id="btn-rock">ROCK</button>
+            <button id="btn-paper">PAPER</button>
+            <button id="btn-scissors">SCISSORS</button>
         </div>
-        <div>
-            <img src="img/scissors.jpg" alt="player-play-img">
+        <div id="player-selection">
+            <img id="player-choice" src="img/question-mark.png" alt="player-play-img">
             <p>YOU</p>
         </div>
-        <div>
-            <img src="img/paper.jpg" alt="computer-play-img">
+        <div id="computer-selection">
+            <img src="img/question-mark.png" alt="computer-play-img">
+            <p>COMPUTER</p>
         </div>
-        <p id="score">SCORE: <span id="player-score">1</span>-<span id="computer-score">0</span></p>
     </main>
+        <p id="score">SCORE: <span id="player-score">0</span>-<span id="computer-score">0</span></p>
+
+    <script src="index.js"></script>
 </body>
 </html>

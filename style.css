@@ -1,0 +1,27 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+h2{
+	margin: 20px auto;
+	text-align: center;
+}
+main{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+#player-options{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid black;
+	height: 200px;
+}
+img{
+	width: 200px;
+	height: 200px;
+}
+#score{
+	text-align: center;
+}
