@@ -3,31 +3,34 @@ const computerChoice = document.querySelector("#computer-choice");
 const playerScore = document.querySelector("#player-score");
 const computerScore = document.querySelector("#computer-score");
 const result = document.querySelector("#result");
-const btnRock = document.querySelector("#btn-rock");
-const btnPaper = document.querySelector("#btn-paper");
-const btnScissors = document.querySelector("#btn-scissors");
-let playerC;
+const buttons = document.querySelectorAll("button");
+const winner = document.querySelector("#winner");
+let pScore = 0;
+let cScore = 0;
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    startGame(button.textContent);
+  });
+});
 
-
-function playerPlay(playerC) {
-  btnRock.addEventListener("click", () => {
-    playerChoice.src = "img/rock.jpg";
-    playerC = "rock";
-  });
-  btnPaper.addEventListener("click", () => {
-    playerChoice.src = "img/paper.jpg";
-    playerC = "paper";
-  });
-  btnScissors.addEventListener("click", () => {
-    playerChoice.src = "img/scissors.jpg";
-    playerC = "scissors";
-  });
-  if (playerC === "rock") {
-    return "rock";
-  } else if (playerC === "paper") {
-    return "paper";
-  } else {
-    return "scissors";
+function startGame(choice) {
+  let cPlay = computerPlay();
+  let pPlay = choice.toLowerCase();
+  playerChoice.src = `img/${pPlay}.jpg`;
+  let res = playRound(pPlay, cPlay);
+  if (res === 1) {
+    pScore++;
+    playerScore.textContent++;
+  } else if (res === 3) {
+    cScore++;
+    computerScore.textContent++;
+  }
+  console.log(pScore);
+  console.log(cScore);
+  if (pScore=== 5) {
+    winner.textContent = "CONGRATS! YOU WIN THE GAME";
+  } else if (cScore === 5) {
+    winner.textContent = "OW :( YOU LOUSE";
   }
 }
 
@@ -46,7 +49,6 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   result.textContent = "";
-  console.log(computerSelection);
   computerSelection = computerSelection.toLowerCase();
   if (playerSelection == "rock") {
     if (computerSelection == "rock") {
@@ -85,22 +87,3 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 }
-playRound(playerPlay(playerC), computerPlay());
-function game() {
-  let result;
-  let cPlay = computerPlay();
-  let pPlay = null;
-  let pScore = 0;
-  let cScore = 0;
-  while (pScore < 5 && cScore < 5) {
-    result = playRound(pPlay, cPlay);
-    if (result == 1) {
-      playerScore.textContent++;
-      pScore++;
-    } else if (result == 3) {
-      computerScore.textContent++;
-      cScore++;
-    }
-  }
-}
-// game();
