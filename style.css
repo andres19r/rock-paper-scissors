@@ -7,21 +7,36 @@ h2{
 	text-align: center;
 }
 main{
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 2fr 1fr;
+	margin: 0 auto;
+	width: 80%;
+	height: 90%;
+	border: solid black;
 }
 #player-options{
 	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	justify-content: center;
+	flex-wrap: wrap;
 	border: 1px solid black;
 	height: 200px;
+}
+#player-options button {
+	width: 70%;
+}
+#selections {
+	border: 1px solid blue;
+	display: flex;
+	justify-content: center;
 }
 img{
 	width: 200px;
 	height: 200px;
 }
 #score{
+	display: flex;
 	text-align: center;
+	grid-column-end: span 2;
+	border: 1px solid black;
 }

@@ -15,27 +15,29 @@
         <button id="btn-paper">PAPER</button>
         <button id="btn-scissors">SCISSORS</button>
       </div>
-      <div id="player-selection">
-        <img
-          id="player-choice"
-          src="img/question-mark.png"
-          alt="player-play-img"
-        />
-        <p>YOU</p>
+      <div id="selections">
+        <div id="player-selection">
+          <img
+            id="player-choice"
+            src="img/question-mark.png"
+            alt="player-play-img"
+          />
+          <p>YOU</p>
+        </div>
+        <div id="computer-selection">
+          <img
+            id="computer-choice"
+            src="img/question-mark.png"
+            alt="computer-play-img"
+          />
+          <p>COMPUTER</p>
+        </div>
       </div>
-      <div id="computer-selection">
-        <img
-          id="computer-choice"
-          src="img/question-mark.png"
-          alt="computer-play-img"
-        />
-        <p>COMPUTER</p>
-      </div>
-    </main>
-    <p id="score">
-      SCORE: <span id="player-score">0</span>-<span id="computer-score">0</span>
-    </p>
+    <div id="score">
+      SCORE: <p id="player-score">0</p>-<p id="computer-score">0</p>
+    </div>
     <p id="winner"></p>
+    </main>
 
     <script src="index.js"></script>
   </body>
