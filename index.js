@@ -5,13 +5,38 @@ const computerScore = document.querySelector("#computer-score");
 const result = document.querySelector("#result");
 const buttons = document.querySelectorAll(".btn-play");
 const winner = document.querySelector("#winner");
+const newGame = document.querySelector(".new-game")
 let pScore = 0;
 let cScore = 0;
+
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     startGame(button.textContent);
   });
 });
+
+newGame.addEventListener('click', () => {
+  enableButtons(buttons)
+  newGame.classList.remove('visible')
+  newGame.classList.add('new-game')
+  pScore = 0;
+  cScore = 0;
+  playerScore.textContent = 0
+  computerScore.textContent = 0
+  playerChoice.src = 'img/question-mark.png'
+  computerChoice.src = 'img/question-mark.png'
+  winner.textContent = "";
+})
+function disableButtons(buttons){
+  buttons.forEach(button => {
+    button.disabled = true
+  })
+}
+function enableButtons(buttons){
+  buttons.forEach(button => {
+    button.disabled = false
+  })
+}
 
 function startGame(choice) {
   let cPlay = computerPlay();
@@ -29,8 +54,14 @@ function startGame(choice) {
   console.log(cScore);
   if (pScore=== 5) {
     winner.textContent = "CONGRATS! YOU WIN THE GAME";
+    disableButtons(buttons)
+    newGame.classList.remove('new-game')
+    newGame.classList.add('visible')
   } else if (cScore === 5) {
     winner.textContent = "OW :( YOU LOUSE";
+    disableButtons(buttons)
+    newGame.classList.remove('new-game')
+    newGame.classList.add('visible')
   }
 }
 

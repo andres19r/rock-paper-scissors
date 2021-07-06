@@ -54,6 +54,9 @@ img{
 	grid-column-end: span 2;
 	align-self: center;
 }
-#new-game{
-	/* display: none; */
+.new-game {
+	display: none;
+}
+.visible {
+	width: 200px;
 }
