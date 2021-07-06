@@ -11,9 +11,9 @@
     <h2 id="result"></h2>
     <main>
       <div id="player-options">
-        <button id="btn-rock">ROCK</button>
-        <button id="btn-paper">PAPER</button>
-        <button id="btn-scissors">SCISSORS</button>
+        <button class="btn-play" id="btn-rock">ROCK</button>
+        <button class="btn-play" id="btn-paper">PAPER</button>
+        <button class="btn-play" id="btn-scissors">SCISSORS</button>
       </div>
       <div id="selections">
         <div id="player-selection">
@@ -34,9 +34,14 @@
         </div>
       </div>
     <div id="score">
-      SCORE: <p id="player-score">0</p>-<p id="computer-score">0</p>
+				<p>
+					SCORE:<p id="player-score">0</p>-<p id="computer-score">0</p>
+				</p>
     </div>
-    <p id="winner"></p>
+		<div class="win">
+			<p id="winner"></p>
+			<button id="new-game">PLAY AGAIN!</button>
+		</div>
     </main>
 
     <script src="index.js"></script>
